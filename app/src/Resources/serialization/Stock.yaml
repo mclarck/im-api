@@ -1,0 +1,52 @@
+App\Entity\Stock:
+  attributes:
+    id:
+      groups: ["read:stock", "write"]
+    created:
+      groups: ["read:stock", "write"]
+    modified:
+      groups: ["read:stock", "write"]
+    status:
+      groups: ["read:stock", "write"]
+    product:
+      groups: ["read:stock", "write"]
+    price:
+      groups: ["read:stock", "write"]
+    cost:
+      groups: ["read:stock", "write"]
+    quantity:
+      groups: ["read:stock", "write"]
+    oldPrice:
+      groups: ["read:stock", "write"]
+    quantityAv:
+      groups: ["read:stock", "write"]
+    observation:
+      groups: ["read:stock", "write"]
+    infos:
+      groups: ["read:stock", "write"]
+    entry:
+      groups: ["read:stock", "write"]
+    file:
+      groups: ["read:stock", "write"]
+    orders:
+      groups: ["read:stock", "write"]
+    avFromTime:
+      groups: ["read:stock", "write"]
+    avToTime:
+      groups: ["read:stock", "write"]
+    avDays:
+      groups: ["read:stock", "write"]
+    restrictions:
+      groups: ["read:stock", "write"]
+    fraction:
+      groups: ["read:stock", "write"]
+    devise:
+      groups: ["read:stock", "write"]
+    tax:
+      groups: ["read:stock", "write"]
+    shipping:
+      groups: ["read:stock", "write"]
+    discount:
+      groups: ["read:stock", "write"]
+    shippingAdditional:
+      groups: ["read:stock", "write"]

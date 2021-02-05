@@ -1,0 +1,14 @@
+App\Entity\Category:
+  attributes:
+    id:
+      groups: [ "read:category","write" ]
+    created:
+      groups: [ "read:category", "write" ]
+    modified:
+      groups: [ "read:category", "write" ]
+    status:
+      groups: [ "read:category", "write" ]
+    name:
+      groups: [ "read:category", "write" ]
+    value:
+      groups: [ "read:category", "write" ]

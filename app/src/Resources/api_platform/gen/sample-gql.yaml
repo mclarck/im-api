@@ -1,0 +1,124 @@
+
+resources:
+  App\Entity\Address:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\Category:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\Entry:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\Location:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\Order:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\Product:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\Provider:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\Setting:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\Stock:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\Operation:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      denormalization_context:
+        groups: [ 'write' ]
+  App\Entity\File:
+    graphql:
+      item_query: App\GraphQl\Resolver\EntityResolver
+      collection_query: App\GraphQl\Resolver\CollectionResolver
+      create: App\GraphQl\Mutation\EntityMutation
+      update: App\GraphQl\Mutation\EntityMutation
+      delete: App\GraphQl\Mutation\EntityMutation
+    attributes:
+      #      normalization_context:
+      #        groups: [ 'read:file' ]
+      denormalization_context:
+        groups: [ 'write' ]
+    App\Entity\User:
+      graphql:
+        item_query: App\GraphQl\Resolver\EntityResolver
+        collection_query: App\GraphQl\Resolver\CollectionResolver
+        create: App\GraphQl\Mutation\EntityMutation
+        update: App\GraphQl\Mutation\EntityMutation
+        delete: App\GraphQl\Mutation\EntityMutation
+      attributes:
+      denormalization_context:
+        groups: [ 'write' ]

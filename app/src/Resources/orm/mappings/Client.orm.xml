@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="App\Entity\Client" repository-class="App\Repository\ClientRepository" table="clients">
+		<id name="id" type="integer" column="id">
+			<generator strategy="AUTO" />
+		</id>
+		<field name="created" type="datetime" nullable="true" />
+		<field name="modified" type="datetime" nullable="true" />
+		<field name="status" nullable="true" />
+		<field name="username" nullable="true" />
+		<field name="email" nullable="true" />
+		<field name="phone" nullable="true" />
+		<one-to-one field="address" target-entity="App\Entity\Address">
+			<cascade>
+				<cascade-persist />
+			</cascade>
+		</one-to-one>
+		<one-to-many field="operations" target-entity="App\Entity\Operation" mapped-by="client">
+			<cascade>
+				<cascade-persist />
+			</cascade>
+		</one-to-many>
+	</entity>
+</doctrine-mapping>

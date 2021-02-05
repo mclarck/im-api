@@ -1,0 +1,18 @@
+App\Entity\Provider:
+  attributes:
+    id:
+      groups: ["read:provider","write"]
+    created:
+      groups: ["read:provider","write"]
+    modified:
+      groups: ["read:provider","write"]
+    status:
+      groups: ["read:provider","write"]
+    name:
+      groups: ["read:provider","write"]
+    alias:
+      groups: ["read:provider","write"]
+    infos:
+      groups: ["read:provider","write"]
+    file:
+      groups: ["read:provider","write"]

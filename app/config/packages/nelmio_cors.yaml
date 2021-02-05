@@ -1,0 +1,18 @@
+nelmio_cors:
+  defaults:
+    origin_regex: true
+    allow_origin: ["%env(CORS_ALLOW_ORIGIN)%"]
+    allow_methods: ["GET", "OPTIONS", "POST", "PUT", "DELETE"]
+    allow_headers:
+      [
+        "Accept",
+        "Content-Type",
+        "Authorization",
+        "IM-COMPANY",
+        "IM-EMAIL",
+        "IM-APIKEY",
+      ]
+    expose_headers: ["Link"]
+    max_age: 3600
+  paths:
+    "^/": null

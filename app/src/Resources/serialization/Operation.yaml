@@ -1,0 +1,20 @@
+App\Entity\Operation:
+  attributes:
+    id:
+      groups: [ "read:operation","write" ]
+    created:
+      groups: [ "read:operation","write" ]
+    modified:
+      groups: [ "read:operation","write" ]
+    status:
+      groups: [ "read:operation","write" ]
+    orders:
+      groups: [ "read:operation","write" ]
+    client:
+      groups: [ "read:operation","write" ]
+    amount:
+      groups: [ "read:operation","write" ]
+    change:
+      groups: [ "read:operation","write" ]
+    ref:
+      groups: [ "read:operation","write" ]

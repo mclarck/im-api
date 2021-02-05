@@ -1,0 +1,38 @@
+App\Entity\Setting:
+  attributes:
+    id:
+      groups: ["read:setting","write"]
+    created:
+      groups: ["read:setting","write"]
+    modified:
+      groups: ["read:setting","write"]
+    status:
+      groups: ["read:setting","write"]
+    address:
+      groups: ["read:setting","write"]
+    options:
+      groups: ["read:setting","write"]
+    file:
+      groups: ["read:setting","write"]
+    openTime:
+      groups: ["read:setting","write"]
+    closeTime:
+      groups: ["read:setting","write"]
+    openDays:
+      groups: ["read:setting","write"]
+    emails:
+      groups: ["read:setting","write"]
+    phones:
+      groups: ["read:setting","write"]
+    title:
+      groups: ["read:setting","write"]
+    description:
+      groups: ["read:setting","write"]
+    bounds:
+      groups: ["read:setting","write"]
+    name:
+      groups: ["read:setting","write"]
+    alias:
+      groups: ["read:setting","write"]
+    country:
+      groups: ["read:setting","write"]

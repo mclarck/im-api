@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# rm -rf vendor var *.lock migrations/*.php public/uploads/images/stocks/* &&
+rm -rf migrations/*.php public/uploads/**/* &&
+# composer install &&
+# symfony console doctrine:database:create
+symfony console doctrine:database:drop --force
+symfony console doctrine:database:drop --connection=kioskito --force
+#----------------------------------------------------
+symfony console doctrine:database:create
+symfony console doctrine:database:create --connection=kioskito
+#-----------------------------------------------------
+symfony console make:entity --regenerate --overwrite &&
+symfony console make:migration -q &&
+symfony console doctrine:migrations:migrate -q &&
+symfony console cache:clear

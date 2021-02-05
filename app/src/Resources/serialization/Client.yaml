@@ -1,0 +1,18 @@
+App\Entity\Client:
+  attributes:
+    id:
+      groups: ["read:client", "write"]
+    created:
+      groups: ["read:client", "write"]
+    modified:
+      groups: ["read:client", "write"]
+    status:
+      groups: ["read:client", "write"]
+    username:
+      groups: ["read:client", "write"]
+    email:
+      groups: ["read:client", "write"]
+    phone:
+      groups: ["read:client", "write"]
+    address:
+      groups: ["read:client", "write"]

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="App\Entity\Location" repository-class="App\Repository\LocationRepository" table="locations">
+		<id name="id" type="integer" column="id">
+			<generator strategy="AUTO" />
+		</id>
+		<field name="created" type="datetime" nullable="true" />
+		<field name="modified" type="datetime" nullable="true" />
+		<field name="status" nullable="true" />
+		<field name="x" type="float" />
+		<field name="y" type="float" />
+		<field name="label" nullable="true" />
+		<field name="bounds" type="array" nullable="true" />
+	</entity>
+</doctrine-mapping>

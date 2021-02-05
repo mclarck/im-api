@@ -1,0 +1,101 @@
+resources:
+  App\Entity\Client:
+    attributes:
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Address:
+    attributes:
+      normalization_context:
+        groups: ["read:address", "read:location", "read:category"]
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Category:
+    attributes:
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Entry:
+    attributes:
+      normalization_context:
+        groups: ["read:entry", "read:provider", "read:category"]
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Location:
+    attributes:
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Order:
+    attributes:
+      normalization_context:
+        groups:
+          [
+            "read:order",
+            "read:stock",
+            "read:entry",
+            "read:product",
+            "read:file",
+            "read:category",
+          ]
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Product:
+    attributes:
+      normalization_context:
+        groups: ["read:product", "read:category"]
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Provider:
+    attributes:
+      normalization_context:
+        groups: ["read:provider", "read:category"]
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Setting:
+    attributes:
+      normalization_context:
+        groups: ["read:setting", "read:category"]
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Stock:
+    attributes:
+      normalization_context:
+        groups:
+          [
+            "read:stock",
+            "read:file",
+            "read:entry",
+            "read:order",
+            "read:category",
+          ]
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Operation:
+    attributes:
+      normalization_context:
+        groups:
+          [
+            "read:operation",
+            "read:stock",
+            "read:file",
+            "read:order",
+            "read:client",
+            "read:address",
+            "read:location",
+            "read:category",
+            "read:entry",
+            "read:order",
+            "read:product",
+          ]
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\File:
+    attributes:
+      normalization_context:
+        groups: ["read:file", "read:category"]
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\User:
+    attributes:
+      normalization_context:
+        groups: ["read:user", "read:category"]
+      denormalization_context:
+        groups: ["write"]

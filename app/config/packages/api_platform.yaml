@@ -1,0 +1,36 @@
+api_platform:
+    # allow_plain_identifiers: true
+    graphql:
+        graphiql:
+            enabled: true
+        graphql_playground:
+            enabled: true
+    formats:
+        graphql: ['application/graphql']
+        json: ['application/json']
+        jsonld: ['application/ld+json']
+        html: ['text/html']
+        csv: ['text/csv']
+    # The title of the API.
+    title: 'API INMARKETIFY'
+    description: 'API INMARKETIFY PLATFORM'
+    version: '1.0.0'
+    show_webby: false
+    #Enable the Swagger documentation and export.
+    enable_swagger: true
+    eager_loading:
+        # To enable or disable eager loading.
+        enabled: false
+        # If disabled, it will only join relations having the EAGER fetch mode.
+        force_eager: false
+        max_joins: 100
+        fetch_partial: true
+    mapping:
+        #paths: ['%kernel.project_dir%/src/Entity']
+        paths:
+            - '%kernel.project_dir%/src/Resources/api_platform/mappings'
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]
+####################################################

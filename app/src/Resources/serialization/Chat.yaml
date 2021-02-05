@@ -1,0 +1,20 @@
+App\Entity\Chat:
+  attributes:
+    id:
+      groups: ["read:chat", "write"]
+    created:
+      groups: ["read:chat", "write"]
+    modified:
+      groups: ["read:chat", "write"]
+    status:
+      groups: ["read:chat", "write"]
+    sender:
+      groups: ["read:chat", "write"]
+    dest:
+      groups: ["read:chat", "write"]
+    room:
+      groups: ["read:chat", "write"]
+    isSender:
+      groups: ["read:chat", "write"]
+    content:
+      groups: ["read:chat", "write"]

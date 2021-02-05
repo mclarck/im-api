@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="App\Entity\Stock" repository-class="App\Repository\StockRepository" table="stocks">
+		<id name="id" type="integer" column="id">
+			<generator strategy="AUTO" />
+		</id>
+		<field name="created" type="datetime" nullable="true" />
+		<field name="modified" type="datetime" nullable="true" />
+		<field name="status" nullable="true" />
+		<field name="price" type="float" nullable="true" />
+		<field name="cost" type="float" nullable="true" />
+		<field name="quantity" type="float" nullable="true" />
+		<field name="oldPrice" type="float" nullable="true" />
+		<field name="quantityAv" type="float" nullable="true" />
+		<field name="tax" type="float" nullable="true" />
+		<field name="shipping" type="float" nullable="true" />
+		<field name="shippingAdditional" type="float" nullable="true" />
+		<field name="observation" nullable="true" />
+		<field name="avFromTime" type="time" nullable="true" />
+		<field name="avToTime" type="time" nullable="true" />
+		<field name="avDays" type="array" nullable="true" />
+		<field name="restrictions" type="array" nullable="true" />
+		<field name="fraction" nullable="true" />
+		<field name="devise" nullable="true" />
+		<field name="discount" type="float" nullable="true" />
+		<one-to-one field="product" target-entity="App\Entity\Product">
+			<cascade>
+				<cascade-persist />
+			</cascade>
+		</one-to-one>
+		<many-to-many field="infos" target-entity="App\Entity\Category">
+			<cascade>
+				<cascade-persist />
+				<cascade-remove />
+			</cascade>
+		</many-to-many>
+		<many-to-one field="entry" target-entity="App\Entity\Entry" inversed-by="stocks">
+			<cascade>
+				<cascade-persist />
+			</cascade>
+		</many-to-one>
+		<many-to-one field="file" target-entity="App\Entity\File">
+			<cascade>
+				<cascade-persist />
+				<cascade-remove />
+			</cascade>
+		</many-to-one>
+		<one-to-many field="orders" target-entity="App\Entity\Order" mapped-by="stock">
+			<cascade>
+				<cascade-persist />
+			</cascade>
+		</one-to-many>
+	</entity>
+</doctrine-mapping>

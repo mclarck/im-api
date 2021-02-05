@@ -1,0 +1,18 @@
+App\Entity\PaymentMethod:
+  attributes:
+    id:
+      groups: ["read:payment", "write"]
+    created:
+      groups: ["read:payment", "write"]
+    modified:
+      groups: ["read:payment", "write"]
+    status:
+      groups: ["read:payment", "write"]
+    type:
+      groups: ["read:payment", "write"]
+    ref:
+      groups: ["read:payment", "write"]
+    message:
+      groups: ["read:payment", "write"]
+    file:
+      groups: ["read:payment", "write"]

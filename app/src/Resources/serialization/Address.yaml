@@ -1,0 +1,22 @@
+App\Entity\Address:
+  attributes:
+    id:
+      groups: ["read:address", "write"]
+    created:
+      groups: ["read:address", "write"]
+    modified:
+      groups: ["read:address", "write"]
+    status:
+      groups: ["read:address", "write"]
+    street:
+      groups: ["read:address", "write"]
+    number:
+      groups: ["read:address", "write"]
+    floor:
+      groups: ["read:address", "write"]
+    apt:
+      groups: ["read:address", "write"]
+    city:
+      groups: ["read:address", "write"]
+    location:
+      groups: ["read:address", "write"]

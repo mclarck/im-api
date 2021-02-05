@@ -1,0 +1,10 @@
+App\Entity\%Entity%:
+  attributes:
+    id:
+      groups: ["read:%table%", "write"]
+    created:
+      groups: ["read:%table%", "write"]
+    modified:
+      groups: ["read:%table%", "write"]
+    status:
+      groups: ["read:%table%", "write"]

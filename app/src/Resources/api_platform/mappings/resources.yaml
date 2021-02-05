@@ -1,0 +1,87 @@
+resources:
+  App\Entity\Chat: 
+    attributes:
+      order: 
+        created: "ASC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\PaymentMethod: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Client: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Address: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Category: 
+    attributes:
+      order: 
+        created: "ASC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Entry: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Location: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Order: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Product: 
+    attributes:
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Provider: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Setting: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Stock: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\Operation: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\File: 
+    attributes:
+      order: 
+        created: "DESC"
+      denormalization_context:
+        groups: ["write"]
+  App\Entity\User: 
+    attributes:
+      denormalization_context:
+        groups: ["write"]

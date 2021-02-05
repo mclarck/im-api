@@ -1,0 +1,24 @@
+App\Entity\Entry:
+  attributes:
+    id:
+      groups: ["read:entry", "write"]
+    created:
+      groups: ["read:entry", "write"]
+    modified:
+      groups: ["read:entry", "write"]
+    status:
+      groups: ["read:entry", "write"]
+    stocked:
+      groups: ["read:entry", "write"]
+    sent:
+      groups: ["read:entry", "write"]
+    stocks:
+      groups: ["read:entry", "write"]
+    branch:
+      groups: ["read:entry", "write"]
+    receipt:
+      groups: ["read:entry", "write"]
+    provider:
+      groups: ["read:entry", "write"]
+    infos:
+      groups: ["read:entry", "write"]

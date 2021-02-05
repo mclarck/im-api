@@ -1,0 +1,26 @@
+App\Entity\File:
+  attributes:
+    id:
+      groups: [ "read:file","write" ]
+    created:
+      groups: [ "read:file","write" ]
+    modified:
+      groups: [ "read:file","write" ]
+    type:
+      groups: [ "read:file","write" ]
+    status:
+      groups: [ "read:file","write" ]
+    path:
+      groups: [ "read:file","write" ]
+    uri:
+      groups: [ "read:file","write" ]
+    mime:
+      groups: [ "read:file","write" ]
+    ext:
+      groups: [ "read:file","write" ]
+    name:
+      groups: [ "read:file","write" ]
+    content:
+      groups: [ "read:file","write" ]
+    size:
+      groups: [ "read:file","write" ] 

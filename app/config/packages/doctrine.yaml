@@ -1,0 +1,56 @@
+doctrine:
+    dbal:
+        # IMPORTANT: You MUST configure your server version,
+        # either here or in the DATABASE_URL env var (see .env file)
+        #server_version: '13'
+        default_connection: default
+        connections:
+            default:
+                url: '%env(resolve:MASTER_DATABASE_URL)%'
+                driver: 'pdo_mysql'
+                server_version: '5.7'
+                charset: utf8mb4
+            customer:
+                wrapper_class: 'App\Service\Config\Database\ApiConnection'
+                charset: utf8mb4
+            test:
+                url: '%env(resolve:TEST_DATABASE_URL)%'
+                driver: 'pdo_mysql'
+                server_version: '5.7'
+                charset: utf8mb4
+            kioskito:
+                url: '%env(resolve:KIOSKITO_DATABASE_URL)%'
+                driver: 'pdo_mysql'
+                server_version: '5.7'
+                charset: utf8mb4
+            master:
+                url: '%env(resolve:MASTER_DATABASE_URL)%'
+                driver: 'pdo_mysql'
+                server_version: '5.7'
+                charset: utf8mb4
+    orm:
+        default_entity_manager: customer
+        auto_generate_proxy_classes: true
+        proxy_dir: '%kernel.cache_dir%/src/Proxies'
+        #default_repository_class: 'App\Repository'
+        entity_managers:
+            customer:
+                connection: kioskito
+                mappings:
+                    Customer:
+                        is_bundle: false
+                        type: xml
+                        dir: '%kernel.project_dir%/src/Resources/orm/mappings'
+                        prefix: 'App\Entity'
+                        alias: App
+#        default: kioskito
+#        auto_generate_proxy_classes: true
+#        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+#        auto_mapping: true
+#        mappings:
+#            App:
+#                is_bundle: false
+#                type: annotation
+#                dir: '%kernel.project_dir%/src/Entity'
+#                prefix: 'App\Entity'
+#                alias: App

@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo "Repository generator"
+
+createAnother="y"
+while [ "$createAnother" == "y" ]; do
+  echo "Enter entity name:"
+  read entityName
+  #  echo "Enter table name:"
+  #  read tableName
+
+  fileName="sample.php.txt"
+  bufferName="../${entityName}Repository.php"
+
+  if [[ -f "$fileName" ]]; then
+
+    if [[ -f "$bufferName" ]]; then
+      rm $bufferName
+    fi
+
+    cp $fileName $bufferName
+
+    echo "Creating mapping file for : $entityName"
+
+    if [[ $entityName != "" ]]; then
+
+      sed -i "s/%Entity%/$entityName/g" $bufferName
+
+      echo "file created: $bufferName"
+      echo ""
+      #sampleText=`cat $bufferName`;
+
+    else
+      echo "entity name or tablename invalid;"
+    fi
+
+  else
+    echo "sample file $fileName invalid;"
+  fi
+
+  echo "Create another ? (y/N)"
+  read createAnother
+done

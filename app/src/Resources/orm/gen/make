@@ -1,0 +1,48 @@
+#!/bin/bash
+
+echo "Orm xml generator";
+
+createAnother="y";
+while [ "$createAnother" == "y" ]
+do
+  echo "Enter entity name:";
+  read  entityName;
+  echo "Enter table name:";
+  read  tableName;
+
+  fileName="sample.xml";
+  bufferName="../mappings/$entityName.orm.xml";
+
+
+  if [[ -f "$fileName" ]];then
+
+    if [[ -f "$bufferName" ]];then
+      rm $bufferName;
+    fi
+
+
+      cp $fileName $bufferName;
+
+      echo "Creating mapping file for : $entityName";
+
+      if [[ $entityName != "" && $tableName != "" ]];then
+
+        sed -i "s/%Entity%/$entityName/g" $bufferName
+        sed -i "s/%table%/$tableName/g" $bufferName
+
+        echo "";
+        echo "file created: $bufferName";
+        echo "";
+        #sampleText=`cat $bufferName`;
+
+      else
+        echo "entity name or tablename invalid;"
+      fi
+
+    else
+      echo "sample file $fileName invalid;"
+    fi
+
+  echo "Create another ? (y/N)";
+  read createAnother;
+done

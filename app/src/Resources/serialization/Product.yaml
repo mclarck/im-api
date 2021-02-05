@@ -1,0 +1,20 @@
+App\Entity\Product:
+  attributes:
+    id:
+      groups: ["read:product", "write"]
+    created:
+      groups: ["read:product", "write"]
+    modified:
+      groups: ["read:product", "write"]
+    status:
+      groups: ["read:product", "write"]
+    details:
+      groups: ["read:product", "write"]
+    specie:
+      groups: ["read:product", "write"]
+    mark:
+      groups: ["read:product", "write"]
+    variety:
+      groups: ["read:product", "write"]
+    container:
+      groups: ["read:product", "write"]

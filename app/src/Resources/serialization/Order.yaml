@@ -1,0 +1,20 @@
+App\Entity\Order:
+  attributes:
+    id:
+      groups: [ "read:order","write" ]
+    created:
+      groups: [ "read:order","write" ]
+    modified:
+      groups: [ "read:order","write" ]
+    status:
+      groups: [ "read:order","write" ]
+    stock:
+      groups: [ "read:order","write" ]
+    quantity:
+      groups: [ "read:order","write" ]
+    address:
+      groups: [ "read:order","write" ]
+    info:
+      groups: [ "read:order","write" ]
+    operation:
+      groups: [ "read:order","write" ]

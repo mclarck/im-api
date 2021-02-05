@@ -1,0 +1,24 @@
+App\Entity\User:
+  attributes:
+    id:
+      groups: ["read:user", "write"]
+    created:
+      groups: ["read:user", "write"]
+    modified:
+      groups: ["read:user", "write"]
+    status:
+      groups: ["read:user", "write"]
+    apikey:
+      groups: ["read:user", "write"]
+    username:
+      groups: ["read:user", "write"]
+    email:
+      groups: ["read:user", "write"]
+    password:
+      groups: ["write"]
+    roles:
+      groups: ["read:user", "write"]
+    file:
+      groups: ["read:user", "write"]
+    infos:
+      groups: ["read:user", "write"] 

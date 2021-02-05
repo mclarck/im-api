@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="App\Entity\Setting" repository-class="App\Repository\SettingRepository" table="settings">
+		<id name="id" type="integer" column="id">
+			<generator strategy="AUTO" />
+		</id>
+		<field name="created" type="datetime" nullable="true" />
+		<field name="modified" type="datetime" nullable="true" />
+		<field name="openTime" type="time" nullable="true" />
+		<field name="closeTime" type="time" nullable="true" />
+		<field name="status" nullable="true" />
+		<field name="openDays" type="array" nullable="true" />
+		<field name="bounds" type="array" nullable="true" />
+		<field name="emails" type="array" nullable="true" />
+		<field name="phones" type="array" nullable="true" />
+		<field name="title" nullable="true" />
+		<field name="description" nullable="true" />
+		<field name="country" nullable="true" />
+		<field name="name" nullable="true" />
+		<field name="alias" nullable="true" />
+		<many-to-one field="file" target-entity="App\Entity\File">
+			<cascade>
+				<cascade-persist />
+			</cascade>
+		</many-to-one>
+		<one-to-one field="address" target-entity="App\Entity\Address">
+			<cascade>
+				<cascade-persist />
+			</cascade>
+		</one-to-one>
+		<many-to-many field="options" target-entity="App\Entity\Category">
+			<cascade>
+				<cascade-persist />
+			</cascade>
+		</many-to-many>
+	</entity>
+</doctrine-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="App\Entity\Address" repository-class="App\Repository\AddressRepository" table="addresses">
+		<id name="id" type="integer" column="id">
+			<generator strategy="AUTO" />
+		</id>
+		<field name="created" type="datetime" nullable="true" />
+		<field name="modified" type="datetime" nullable="true" />
+		<field name="status" nullable="true" />
+		<field name="street" nullable="true" />
+		<field name="number" nullable="true" />
+		<field name="floor" nullable="true" />
+		<field name="apt" nullable="true" />
+		<field name="city" nullable="true" />
+		<one-to-one field="location" target-entity="App\Entity\Location">
+			<cascade>
+				<cascade-persist />
+			</cascade>
+		</one-to-one>
+	</entity>
+</doctrine-mapping>

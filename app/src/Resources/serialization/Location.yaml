@@ -1,0 +1,18 @@
+App\Entity\Location:
+  attributes:
+    id:
+      groups: [ "read:location","write" ]
+    created:
+      groups: [ "read:location", "write" ]
+    modified:
+      groups: [ "read:location", "write" ]
+    status:
+      groups: [ "read:location","write" ]
+    x:
+      groups: [ "read:location","write" ]
+    y:
+      groups: [ "read:location","write" ]
+    label:
+      groups: [ "read:location","write" ]
+    bounds:
+      groups: [ "read:location","write" ]
