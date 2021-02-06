@@ -14,9 +14,9 @@ RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN echo "sendmail_path=/usr/sbin/sendmail -t -i" >> /usr/local/etc/php/conf.d/sendmail.ini
 RUN mv $HOME/.symfony/bin/symfony /usr/local/bin/symfony
 COPY ./ ./
+RUN composer install
 RUN sed -i '/#!\/bin\/sh/aservice sendmail restart' /usr/local/bin/docker-php-entrypoint
 RUN sed -i '/#!\/bin\/sh/aecho "$(hostname -i)\t$(hostname) $(hostname).localhost" >> /etc/hosts' /usr/local/bin/docker-php-entrypoint
 RUN a2enmod rewrite
 RUN /etc/init.d/apache2 restart
-RUN composer install
 EXPOSE 80
