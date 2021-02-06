@@ -19,3 +19,4 @@ RUN sed -i '/#!\/bin\/sh/aecho "$(hostname -i)\t$(hostname) $(hostname).localhos
 RUN a2enmod rewrite
 RUN /etc/init.d/apache2 restart
 RUN composer install
+EXPOSE 80

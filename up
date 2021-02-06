@@ -1,3 +1,4 @@
 #!/bin/bash
 
-sudo docker-compose up --build --remove-orphans
+sudo rm -rf mysql
+sudo docker-compose up --build
