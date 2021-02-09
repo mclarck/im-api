@@ -19,14 +19,4 @@ class HomeController extends AbstractController
     {
         return new Response("inmarketify");
     }
-
-    /**
-     * @Route("/market/{_locale}/{company}/{path}",requirements={"path"=".+","_locale": "en|es|fr|pt"})
-     * @param Request $req
-     * @return Response
-     */
-    public function market(Request $req): Response
-    {
-        return $this->render('market/market.html.twig',[]);
-    }
 }
