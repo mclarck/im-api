@@ -20,4 +20,4 @@ framework:
     php_errors:
         log: true
     assets:
-        base_path: '/'
+        base_path: '/public'
