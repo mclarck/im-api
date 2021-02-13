@@ -1,20 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ lang }}">
 <head>
     <meta charset="utf-8"/>
-    <link rel="icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="icon" href="{{ asset('/public/market/favicon.ico') }}"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="description" content="INMARKETIFY | E-COMMERCE & BUSINESS MANAGEMENT"/>
-    <link rel="manifest" href="/market/manifest.json"/>
-    <title>INMARKETIFY | E-COMMERCE & BUSINESS MANAGEMENT</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/market/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/market/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="/market/favicon-16x16.png"/>
-    <link rel="mask-icon" href="/market/safari-pinned-tab.svg" color="#5bbad5"/>
+    <meta name="description" content="INMARKETIFY - DASHBOARD | E-COMMERCE & BUSINESS MANAGEMENT"/>
+    <link rel="manifest" href="{{ asset('/public/market/manifest.json') }}"/>
+    <title>INMARKETIFY - DASHBOARD | E-COMMERCE & BUSINESS MANAGEMENT</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/public/market/apple-touch-icon.png') }}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/public/market/favicon-32x32.png') }}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/public/market/favicon-16x16.png') }}"/>
+    <link rel="mask-icon" href="{{ asset('/public/market/safari-pinned-tab.svg') }}" color="#5bbad5"/>
     <meta name="msapplication-TileColor" content="#da532c"/>
     <meta name="theme-color" content="#ffffff"/>
-    <link href="/market/static/css/2.4175f971.chunk.css" rel="stylesheet">
-    <link href="/market/static/css/main.5ace4284.chunk.css" rel="stylesheet">
+    <link href="{{ asset('/public/market/static/css/2.4175f971.chunk.css') }}" rel="stylesheet">
+    <link href="{{ asset('/public/market/static/css/main.5ace4284.chunk.css') }}" rel="stylesheet">
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -77,7 +78,7 @@
         var p = f;
         t()
     }([])</script>
-<script src="/market/static/js/2.dc50a04e.chunk.js"></script>
-<script src="/market/static/js/main.431fb92b.chunk.js"></script>
+<script src="{{ asset('/public/market/static/js/2.dc50a04e.chunk.js') }}"></script>
+<script src="{{ asset('/public/market/static/js/main.431fb92b.chunk.js') }}"></script>
 </body>
 </html>
