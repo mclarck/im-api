@@ -6,8 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: api
     volumes:
-      - ./:/var/www/
-      - ./public:/var/www/html
+      - ./:/var/www/html
     depends_on:
       - database
     restart: always
