@@ -87,22 +87,24 @@ class EntityEventSubscriber implements EventSubscriber, LoggerAwareInterface
         if ($entity instanceof IFile) {
             if ($entity->getContent()) {
                 if (\preg_match("#^data:image#", $entity->getMime())) {
-                    $name = Uuid::uuid4();
-                    $fileName = $name->toString() . "." . $entity->getExt();
-                    $upload_dir = $this->params->get('upload_dir');
-                    $company =  Request::getHeader('IM-COMPANY') ?? '';
-                    $filePath = "$upload_dir/medias/$company";
-                    if (!\file_exists($filePath)) {
-                        \mkdir($filePath, 0777, true);
-                    }
-                    $content = \base64_decode($entity->getContent());
-                    $entity->setName($fileName);
-                    $entity->setUri($this->req->getCurrentRequest()->getHttpHost());
-                    $entity->setType(\get_class($entity));
-                    $path = "uploads/medias/" . Request::getHeader('IM-COMPANY') ?? "";
-                    $entity->setPath($path);
-                    $entity->setContent('');
                     try {
+                        $name = Uuid::uuid4();
+                        $fileName = $name->toString() . "." . $entity->getExt();
+                        $upload_dir = $this->params->get('upload_dir');
+                        $company =  Request::getHeader('IM-COMPANY') ?? '';
+                        $filePath = "$upload_dir/medias/$company";
+                        $this->logger->info($filePath);
+
+                        if (!\file_exists($filePath)) {
+                            \mkdir($filePath, 0777, true);
+                        }
+                        $content = \base64_decode($entity->getContent());
+                        $entity->setName($fileName);
+                        $entity->setUri($this->req->getCurrentRequest()->getHttpHost());
+                        $entity->setType(\get_class($entity));
+                        $path = "uploads/medias/" . Request::getHeader('IM-COMPANY') ?? "";
+                        $entity->setPath($path);
+                        $entity->setContent('');
                         \file_put_contents($filePath . "/" . $fileName, $content);
                         $this->logger->info('file: ' . $fileName . ' has just created');
                     } catch (Exception $e) {
