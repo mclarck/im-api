@@ -102,7 +102,7 @@ class EntityEventSubscriber implements EventSubscriber, LoggerAwareInterface
                         $entity->setName($fileName);
                         $entity->setUri($this->req->getCurrentRequest()->getHttpHost());
                         $entity->setType(\get_class($entity));
-                        $path = "uploads/medias/" . Request::getHeader('IM-COMPANY') ?? "";
+                        $path = "/public/uploads/medias/" . Request::getHeader('IM-COMPANY') ?? "";
                         $entity->setPath($path);
                         $entity->setContent('');
                         \file_put_contents($filePath . "/" . $fileName, $content);

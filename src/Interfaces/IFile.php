@@ -7,7 +7,7 @@ interface IFile
     public function getContent();
     public function setContent(string $name);
     public function getSize();
-    public function setSize(string $name);
+    public function setSize(float $name);
     public function getName();
     public function setName(string $name);
     public function getPath();

@@ -14,6 +14,6 @@
 		<field name="path" nullable="true" />
 		<field name="uri" nullable="true" />
 		<field name="type" nullable="true" />
-		<field name="size" nullable="true" />
+		<field name="size" type="float" nullable="true" />
 	</entity>
 </doctrine-mapping>

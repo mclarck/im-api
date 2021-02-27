@@ -112,12 +112,12 @@ class File extends Entity implements IFile
         return $this;
     }
 
-    public function getSize(): ?string
+    public function getSize(): ?float
     {
         return $this->size;
     }
 
-    public function setSize(?string $size): self
+    public function setSize(?float $size): self
     {
         $this->size = $size;
 
