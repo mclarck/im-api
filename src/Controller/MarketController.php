@@ -17,6 +17,7 @@ class MarketController extends AbstractController
      */
     public function index($company, $_locale): Response
     {
-        return $this->render('market/index.html.twig', ["lang" => $_locale,"company" => $company]);
+        // return $this->render('market/index.html.twig', ["lang" => $_locale,"company" => $company]);
+        return new Response("inmarketify");
     }
 }
