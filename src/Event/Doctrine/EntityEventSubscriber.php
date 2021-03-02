@@ -98,7 +98,8 @@ class EntityEventSubscriber implements EventSubscriber, LoggerAwareInterface
                         if (!\file_exists($filePath)) {
                             \mkdir($filePath, 0777, true);
                         }
-                        $content = \base64_decode($entity->getContent());
+                        $b64brut = \preg_replace("#^data:image\/(.*);base64,#", "", $entity->getContent());
+                        $content = \base64_decode($b64brut);
                         $entity->setName($fileName);
                         $entity->setUri($this->req->getCurrentRequest()->getHttpHost());
                         $entity->setType(\get_class($entity));
